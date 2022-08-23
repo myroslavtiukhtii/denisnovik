@@ -197,7 +197,7 @@ header nav {
 }
 
 
-.about .container {
+.about {
   padding-top: 15px;
   padding-bottom: 15px;
   background: #F6F6F6;
@@ -368,11 +368,12 @@ header nav {
 fill: #000000;
 }
 
-.portfolio .container {
+.portfolio {
   padding-top: 25px;
   padding-bottom: 25px;
   background-color: #F6F6F6;
 }
+
 
 .portfolio .title {
   font-family: 'Open Sans', sans-serif;
@@ -403,6 +404,7 @@ fill: #000000;
 .portfolio li img {
   width: 100%;
   max-height: 540px;
+  max-width: 936px;
   height: auto;
 }
 
@@ -553,11 +555,11 @@ fill: #000000;
 }
 
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 930px) {
 
   .container {
-    min-width: 1440px;
-    padding: 0 235px;
+    min-width: 930px;
+    padding: 0 15px;
     margin: 0 auto;
   }
 
@@ -604,7 +606,7 @@ fill: #000000;
   }
 
   .intro .container img {
-    width: 100%;
+    max-width: 943px;
     height: 387px;
     margin-top: 50px;
   }
@@ -698,7 +700,7 @@ fill: #000000;
     margin-top: 20px;
   }
 
-  .portfolio .container {
+  .portfolio {
     padding-top: 100px;
     padding-bottom: 100px;
   }
@@ -712,9 +714,23 @@ fill: #000000;
     margin-top: 50px;
   }
 
+  .portfolio ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .portfolio ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .portfolio li img {
     width: 970px;
-    height: 540px;
+    min-height: 540px;
   }
   
   .portfolio .container li a {
