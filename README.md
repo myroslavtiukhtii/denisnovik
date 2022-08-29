@@ -1,7 +1,7 @@
 ## :pushpin: Denis Novik
 #### :memo: Description: 
 
-Home page of Product company website.
+Home page of Portfolio website.
 ___
 
 #### :link: Live Demo: 
