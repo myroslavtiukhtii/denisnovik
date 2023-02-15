@@ -236,7 +236,7 @@ header nav {
   outline: var(--y) solid rgba(0,0,0,0.4);
   outline-offset: calc(-1*var(--y));
   padding: var(--y) var(--y) 0 var(--y);
-  transition: 9.3s;
+  transition: 2.3s;
 }
 .intro__box:hover img {
   --_a: 0deg;
@@ -711,7 +711,6 @@ fill: #000000;
     max-width: 943px;
     height: 387px;
     margin-top: 50px;
-    transition: .3s ease-out;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   }
 
