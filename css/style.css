@@ -215,9 +215,35 @@ header nav {
   width: 100%;
   max-height: 387px;
   height: auto;
-  -webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  border-radius: 15px;
 }
+
+/**/
+.intro__box img {
+  /* adjust the below to control the 3D effect */
+  --x: 10px;
+  --y: 20px;
+  transform: perspective(1000px) rotateX(var(--_a,20deg));
+  /* */
+  clip-path: polygon(       
+     var(--y)              var(--y),       
+     calc(100% - var(--y)) var(--y),       
+     calc(100% - var(--y)) calc(100% - var(--y)),       
+     calc(100% - var(--y) - var(--x)) var(--_c,100%),       
+     calc(var(--x) + var(--y))        var(--_c,100%),      
+     var(--y)        calc(100% - var(--y))       
+     );
+  outline: var(--y) solid rgba(0,0,0,0.4);
+  outline-offset: calc(-1*var(--y));
+  padding: var(--y) var(--y) 0 var(--y);
+  transition: 9.3s;
+}
+.intro__box:hover img {
+  --_a: 0deg;
+  --_c: calc(100% - var(--y));
+}
+
+/**/
 
 .intro .intro_upbtn {
   position: fixed;
@@ -685,48 +711,12 @@ fill: #000000;
     max-width: 943px;
     height: 387px;
     margin-top: 50px;
-    border-radius: 15px;
     transition: .3s ease-out;
-    perspective: 500px;	
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   }
 
-  .intro .container img:hover {
-    animation: kenburns-top 5s ease-out both;
-  }
 
 
-/**/
-  @-webkit-keyframes kenburns-top {
-  0% {
-  -webkit-transform: scale(1) translateY(0);
-        transform: scale(1) translateY(0);
-  -webkit-transform-origin: 50% 16%;
-        transform-origin: 50% 16%;
-  }
-  100% {
-  -webkit-transform: scale(1.1) translateY(-15px);
-        transform: scale(1.1) translateY(-15px);
-  -webkit-transform-origin: top;
-        transform-origin: top;
-  }
-  }
-  @keyframes kenburns-top {
-  0% {
-  -webkit-transform: scale(1) translateY(0);
-        transform: scale(1) translateY(0);
-  -webkit-transform-origin: 50% 16%;
-        transform-origin: 50% 16%;
-  }
-  100% {
-  -webkit-transform: scale(1.1) translateY(-15px);
-        transform: scale(1.1) translateY(-15px);
-  -webkit-transform-origin: top;
-        transform-origin: top;
-  }
-  }
-
-  /**/
 
   .about .container {
     padding-top: 100px;

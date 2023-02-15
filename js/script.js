@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     for (let i = 0; i < MENULINK.length; i++) {
         MENULINK[i].addEventListener('click', () => {
-            HEADER.classList.toggle('header--active');
+            HEADER.classList.remove('header--active');
         })
     }
 
