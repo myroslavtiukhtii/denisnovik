@@ -3,6 +3,10 @@
   line-height: 1;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -40,7 +44,7 @@ html {
 
 .header li:hover a {
   color: #000000;
-} 
+}
 
 /*BURGER*/
 
@@ -48,6 +52,7 @@ header nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  transition: .3s ease-out;
 }
 
 .header nav button {
@@ -66,7 +71,9 @@ header nav {
 }
 
 .header nav ul {
+  position: relative;
   display: none;
+  transition: .3s ease-out;
 }
 
 .header--active nav {
@@ -77,13 +84,14 @@ header nav {
 .header--active nav ul {
   display: flex;
   position: fixed;
-  top: 40px;
+  top: 60px;
   left: 0;
   right: 0;
   bottom: 0;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  row-gap: 25px;
 }
 
 .header--active nav button {
@@ -194,6 +202,26 @@ header nav {
   height: auto;
   -webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.intro .intro_upbtn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: #e5e5e58e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: transparent;
+  transition: .3s ease-in;
+}
+
+.intro .intro_upbtn:hover {
+  background-color: #e5e5e5;
 }
 
 
@@ -325,6 +353,11 @@ header nav {
 .icon {
   width: 12px;
   height: 10px;
+  transition: .3s ease-out;
+}
+
+.icon:hover {
+  transform: rotate(45deg);
 }
 
 .skills .main-list {
@@ -397,7 +430,6 @@ fill: #000000;
   font-weight: 400;
   font-size: 12px;
   line-height: 25px;
-  text-decoration-line: underline;
   color: #000000;
 }
 
@@ -406,6 +438,7 @@ fill: #000000;
   max-height: 540px;
   max-width: 936px;
   height: auto;
+  border-radius: 5%;
 }
 
 
@@ -582,6 +615,30 @@ fill: #000000;
     display: block;
   }
 
+  .header nav li:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .navigation-links__item {
+    position: relative;
+  }
+  
+  .navigation-links__item::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2%;
+    background-color: #000000;
+    transition: .3s ease-out;
+  }
+
+  .navigation-links__item:hover::after {
+    width: 100%;
+  }
+
+
   .header__button {
     display: none;
   }
@@ -594,6 +651,10 @@ fill: #000000;
     line-height: 25px;
     letter-spacing: 0.02em;
     color: #828282;
+  }
+
+  .intro {
+    padding-bottom: 50px;
   }
 
   .intro .container h2 {
@@ -609,7 +670,48 @@ fill: #000000;
     max-width: 943px;
     height: 387px;
     margin-top: 50px;
+    border-radius: 15px;
+    transition: .3s ease-out;
+    perspective: 500px;	
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   }
+
+  .intro .container img:hover {
+    animation: kenburns-top 5s ease-out both;
+  }
+
+
+/**/
+  @-webkit-keyframes kenburns-top {
+  0% {
+  -webkit-transform: scale(1) translateY(0);
+        transform: scale(1) translateY(0);
+  -webkit-transform-origin: 50% 16%;
+        transform-origin: 50% 16%;
+  }
+  100% {
+  -webkit-transform: scale(1.1) translateY(-15px);
+        transform: scale(1.1) translateY(-15px);
+  -webkit-transform-origin: top;
+        transform-origin: top;
+  }
+  }
+  @keyframes kenburns-top {
+  0% {
+  -webkit-transform: scale(1) translateY(0);
+        transform: scale(1) translateY(0);
+  -webkit-transform-origin: 50% 16%;
+        transform-origin: 50% 16%;
+  }
+  100% {
+  -webkit-transform: scale(1.1) translateY(-15px);
+        transform: scale(1.1) translateY(-15px);
+  -webkit-transform-origin: top;
+        transform-origin: top;
+  }
+  }
+
+  /**/
 
   .about .container {
     padding-top: 100px;
@@ -731,11 +833,23 @@ fill: #000000;
   .portfolio li img {
     width: 970px;
     min-height: 540px;
+    transition: .3s ease-out;
+    opacity: 0.8;
+  }
+
+  .portfolio li img:hover {
+    opacity: 1;
   }
   
   .portfolio .container li a {
     font-size: 18px;
     line-height: 25px;
+    transition: .3s ease-out;
+  }
+
+  .portfolio .container li:hover a {
+    color: #aeaeae;
+    transform: translateY(-2px);
   }
 
   .portfolio .container li img {
@@ -779,6 +893,16 @@ fill: #000000;
   .contacts .button a {
     font-size: 18px;
     line-height: 25px;
+  }
+
+  .icon-contacts {
+    transition: .3s ease-in;
+    perspective: 500;
+  }
+
+  .icon-contacts:hover {
+    scale: 1.1;
+    transform: translateY(-5px);
   }
   
   .contacts .container ul {

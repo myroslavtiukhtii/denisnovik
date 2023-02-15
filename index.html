@@ -43,13 +43,17 @@
         <div class="container">
             <nav class="navigation">
                 <h2 class="visually-hidden">Main menu</h2>
-                <button class="header__button"></button>
+                <button class="header__button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <ul class="navigation-links">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About me</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contacts">Contacts</a></li>
+                    <li class="navigation-links__item"><a href="#home" class="active">Home</a></li>
+                    <li class="navigation-links__item"><a href="#about">About me</a></li>
+                    <li class="navigation-links__item"><a href="#skills">Skills</a></li>
+                    <li class="navigation-links__item"><a href="#portfolio">Portfolio</a></li>
+                    <li class="navigation-links__item"><a href="#contacts">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -58,14 +62,17 @@
         <section id="home" class="intro">
             <div class="container">
                 <h2>Denis Novik</h2>
-                <img src="img/img-hero.jpg" alt="photo-denis-novak" width="943px" height="387">
+                <img class="intro__cover" src="img/img-hero.jpg" alt="photo-denis-novak" width="943px" height="387">
             </div>
+            <button class="intro_upbtn">
+                <i class="fa-solid fa-caret-up"></i>
+            </button>
         </section>
         <section id="about" class="about">
             <div class="container">
                 <h2 class="title">About me</h2>
                 <div class="text">
-                    <p class="p1">Hi, I'm Denis – UX/UI designer from Minsk.<br> 
+                    <p class="p1">Hi, I'm Denis – UX/UI designer from Ukraine.<br> 
                        I'm interested in design and everything connected with it.
                     </p>
                     <p class="p2">I'm studying at courses "Web and mobile design<br> 
@@ -274,12 +281,6 @@
             </div>
         </section>
     </main>
-    <script>  
-    const HEADER = document.querySelector('.header');
-    const MENU_BUTTON = HEADER.querySelector('.header__button');
-    MENU_BUTTON.addEventListener('click', (e) => {
-        HEADER.classList.toggle('header--active');
-    });
-    </script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
